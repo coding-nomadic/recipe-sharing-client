@@ -6,11 +6,8 @@ function App()
 {
   return (
     <div className="App">
-      <h2>
-        <i>
-          Recipe Sharins        </i>
-      </h2>
-      <img src={ grill } alt="grill" style={ { borderRadius: "20px" } } />
+      Recipe Sharing
+      <img src={ grill } alt="grill" />
     </div>
   );
 }
