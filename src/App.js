@@ -8,8 +8,7 @@ function App()
     <div className="App">
       <h2>
         <i>
-          Recipe Sharing
-        </i>
+          Recipe Sharins        </i>
       </h2>
       <img src={ grill } alt="grill" style={ { borderRadius: "20px" } } />
     </div>
