@@ -27,7 +27,7 @@ function App()
   return (
     <div className="App">
       <h1 className="heading"
-        style={ { position: "absolute", marginLeft: "190px", zIndex: "2" } }
+        style={ { position: "absolute", marginLeft: "30px", zIndex: "2" } }
       >
         <i><b>
           Recipe Sharing
@@ -36,9 +36,9 @@ function App()
       </h1>
       <img src={ grill } alt="grill"
         className="images"
-      // style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
+        style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
       />
-      <div style={ {} }>
+      <div style={ { marginLeft: "%" } }>
         <Header />
       </div>
     </div>
