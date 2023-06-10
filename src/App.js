@@ -2,23 +2,24 @@ import logo from './logo.svg';
 import './App.scss';
 import grill from "./images/delish.jpeg";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/header"
+import Items from "./components/items"
+
+const baseURL = "https://recipe-app-service.herokuapp.com/api/v1/recipes";
 
 function App()
 {
-  const baseURL = "https://recipe-app-service.herokuapp.com/api/v1/recipes";
+  const [data, setData] = useState()
 
   const myFunction = async () =>
   {
     try
     {
-      let responseData = await axios.get(`${baseURL}`).then((res) =>
+      await axios.get(`${baseURL}`).then((res) =>
       {
-        console.log('response', res);
+        setData(res.data)
       })
-      console.log("response ", responseData)
-
     } catch (e)
     {
       console.log(e)
@@ -46,6 +47,9 @@ function App()
       />
       <div style={ { marginLeft: "%" } }>
         <Header />
+      </div>
+      <div style={ { marginLeft: "%" } }>
+        <Items data={ data } />
       </div>
     </div>
   );
