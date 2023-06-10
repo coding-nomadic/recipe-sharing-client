@@ -9,6 +9,13 @@
   font-family: 'initial';
 }
 
+.images{
+  width: "100%";
+  position: "relative";
+  height: '600px'; 
+  object-fit: "cover";
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
