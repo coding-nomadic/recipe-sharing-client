@@ -9,26 +9,19 @@ function header() {
     return (
     <div style={{ }}>
 
-    <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-white p-4">
-      <h5 class="text-light h4">Collapsed content</h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
+    <div className="pos-f-t">
+  <div className="collapse" id="navbarToggleExternalContent">
+    <div className="bg-white p-4">
+      <h5 className="text-light h4">Collapsed content</h5>
+      <span className="text-muted">Toggleable via the navbar brand.</span>
     </div>
   </div>
-  <nav class="navbar navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" onClick={() => navClick()}></span>
+  <nav className="navbar navbar-light bg-light">
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon" onClick={() => navClick()}></span>
     </button>
-
-
 </nav>
-
-
-
 </div>
-
-
     </div>
   )
 }
