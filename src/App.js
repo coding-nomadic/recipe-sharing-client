@@ -3,6 +3,7 @@ import './App.scss';
 import grill from "./images/delish.jpeg";
 import axios from "axios";
 import React, { useEffect } from "react";
+import Header from "./components/header"
 
 function App()
 {
@@ -38,8 +39,7 @@ function App()
       // style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
       />
       <div style={ {} }>
-        <h1>
-        </h1>
+        <Header />
       </div>
     </div>
   );
