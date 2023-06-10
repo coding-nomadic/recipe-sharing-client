@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import grill from "./images/delish.jpeg";
 import axios from "axios";
 import React, { useEffect } from "react";
@@ -25,7 +25,9 @@ function App()
 
   return (
     <div className="App">
-      <h1 style={ { zIndex: "2", position: "absolute", marginLeft: "50px", fontFamily: 'initial' } }>
+      <h1 className="heading"
+        style={ { position: "absolute", marginLeft: "30px", zIndex: "2" } }
+      >
         <i><b>
           Recipe Sharing
         </b>
