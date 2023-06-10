@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import grill from "./images/grill.jpeg";
+import grill from "./images/delish.jpeg";
 import axios from "axios";
 import React, { useEffect } from "react";
 
@@ -25,10 +25,17 @@ function App()
 
   return (
     <div className="App">
-      <h1>
-        Recipe Sharing
+      <h1 style={ { zIndex: "2", position: "absolute", marginLeft: "50px", fontFamily: 'initial' } }>
+        <i><b>
+          Recipe Sharing
+        </b>
+        </i>
       </h1>
-      <img src={ grill } alt="grill" />
+      <img src={ grill } alt="grill" style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } } />
+      <div style={ {} }>
+        <h1>
+        </h1>
+      </div>
     </div>
   );
 }
