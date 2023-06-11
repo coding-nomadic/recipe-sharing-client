@@ -36,9 +36,10 @@ function App()
       <h1 className="heading"
         style={ { position: "absolute", marginLeft: "30px", zIndex: "2" } }
       >
-        <i><b>
-          Recipe Sharing
-        </b>
+        <i>
+          <b>
+            Recipe Sharing
+          </b>
         </i>
       </h1>
       <img src={ grill } alt="grill"
