@@ -13,11 +13,10 @@ function App()
 
   const myFunction = async () =>
   {
-
     let result2;
     try
     {
-      result2 = await RCService.SignUp("tenzin", "tenzin@12345", "tenzin@gmail.com", "tenzin thinley", "1234567890")
+      result2 = await RCService.SignUp("tenzin123", "12345", "tenzin@gmail.com", "tenzin thinley", "1234567890")
     } catch (e)
     {
       console.log('e', e)
