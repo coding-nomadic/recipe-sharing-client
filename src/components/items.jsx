@@ -5,9 +5,9 @@ function Items({data}) {
   return (
     <div>
       {!!data && data.map((el, i) => {
-       return <Item key={i} data={el} />
+        return <Item key={i} data={el} />
       })}</div>
   )
 }
 
-export default Items
+export default Items;
