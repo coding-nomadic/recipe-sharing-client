@@ -21,7 +21,7 @@ function App()
     {
       console.log('e', e)
     }
-    console.log("result is", result)
+    console.log("result 111 is", result)
     let result2;
     try
     {
@@ -30,7 +30,16 @@ function App()
     {
       console.log('e', e)
     }
-    console.log("result is", result2)
+    console.log("result 22222 is", result2)
+    let result3;
+    try
+    {
+      result = await RCService.GetRecipes()
+    } catch (e)
+    {
+      console.log('e', e)
+    }
+    console.log("result 333 3 is", result3);
   }
 
   useEffect(() =>

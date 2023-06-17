@@ -33,14 +33,19 @@ export default class RCService
     SignUp = async (username, password, email, fullName, mobile) =>
     {
         let body = JSON.stringify({
-            "userName": username,
-            "password": password,
-            "email": email,
-            "mobileNumber": mobile,
-            "fullName": fullName
+            userName: username,
+            password: password,
+            email: email,
+            mobileNumber: mobile,
+            fullName: fullName
         })
         return await this.fetchRequest('signup', 'POST', body);
     };
 
-
+    GetRecipes = async () =>
+    {
+        return await this.fetchRequest('/api/v1/recipes', 'GET');
+    };
 }
+
+
