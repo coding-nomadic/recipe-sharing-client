@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import RCService from './context/RCService';
+import RCServices from "./services/rc-service"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const rcService = new RCServices;
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <RCService.Provider value={ rcService }>
+        <App />
+      </RCService.Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

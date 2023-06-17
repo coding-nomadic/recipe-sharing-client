@@ -6,25 +6,24 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/header"
 import Items from "./components/items"
 import Footer from "./components/footer"
-
-const baseURL = "https://recipe-app-service.herokuapp.com/api/v1/recipes";
+import RCServiceComponent from "./context/RCService";
 
 function App()
 {
   const [data, setData] = useState()
+  const RCService = React.useContext(RCServiceComponent);
 
   const myFunction = async () =>
   {
+    let result;
     try
     {
-      await axios.get(`${baseURL}`).then((res) =>
-      {
-        setData(res.data)
-      })
+      result = await RCService.postAuthenticate("tenzin", "tenzin12345")
     } catch (e)
     {
-      console.log(e)
+      console.log('e', e)
     }
+    console.log("result is", result)
   }
 
   useEffect(() =>
