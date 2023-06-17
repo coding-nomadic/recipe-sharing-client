@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import "./header.scss";
+import RCServiceComponent from "../../context/RCService";
 
 const style = {
   position: 'absolute',
@@ -23,6 +24,22 @@ function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
+
+  const RCService = React.useContext(RCServiceComponent);
+
+  const submitForm = async() => {
+    let result;
+    try
+    {
+      result = await RCService.postAuthenticate(userName, password)
+    } catch (e)
+    {
+      console.log('e', e)
+    }
+    console.log("result 111 is", result)
+  }
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,21 +70,21 @@ function Header() {
               <label>
                 User Name:
               <br/>
-                <input type="text" name="username" />
+                <input type="text" name="username" onChange={(e) => setUserName(e.target.value)}/>
               </label>
               <br/>
               <br/>   
               <label>
                 Password:
               <br/>
-                <input type="text" name="password" />
+                <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
               </label>
               <br/>
               <br/>   
               <Button type="submit"
               id="names" className="btn mb-3" variant="outline-dark"
               style={{float: "right"}}
-              >
+              onClick={submitForm}>
               Submit
               </Button>
             </form>

@@ -13,15 +13,7 @@ function App()
 
   const myFunction = async () =>
   {
-    let result;
-    try
-    {
-      result = await RCService.postAuthenticate("tenzin", "tenzin@12345")
-    } catch (e)
-    {
-      console.log('e', e)
-    }
-    console.log("result 111 is", result)
+
     let result2;
     try
     {
@@ -34,7 +26,7 @@ function App()
     let result3;
     try
     {
-      result = await RCService.GetRecipes()
+      result3 = await RCService.GetRecipes()
     } catch (e)
     {
       console.log('e', e)
