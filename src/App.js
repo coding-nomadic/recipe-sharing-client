@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.scss';
 import grill from "./images/delish.jpeg";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./components/header"
 import Items from "./components/items"
