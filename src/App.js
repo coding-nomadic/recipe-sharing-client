@@ -5,6 +5,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./components/header"
 import Items from "./components/items"
+import Footer from "./components/footer"
 
 const baseURL = "https://recipe-app-service.herokuapp.com/api/v1/recipes";
 
@@ -51,6 +52,10 @@ function App()
       </div>
       <div style={ { marginLeft: "%" } }>
         <Items data={ data } />
+      </div>
+
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );
