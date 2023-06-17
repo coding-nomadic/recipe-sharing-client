@@ -13,8 +13,6 @@ export default class RCService
                     "Content-type": "application/json; charset=UTF-8"
                 }
             }
-                // .then((response) => response.json())
-                // .then((json) => console.log(json))
             );
             return response;
         } catch (e)
