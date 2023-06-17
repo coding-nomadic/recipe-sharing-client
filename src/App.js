@@ -16,7 +16,7 @@ function App()
     let result;
     try
     {
-      result = await RCService.postAuthenticate("tenzin", "tenzin12345")
+      result = await RCService.postAuthenticate("tenzin", "tenzin@12345")
     } catch (e)
     {
       console.log('e', e)

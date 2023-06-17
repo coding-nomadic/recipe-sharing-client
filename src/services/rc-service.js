@@ -24,11 +24,10 @@ export default class RCService
     postAuthenticate = async (username, password) =>
     {
         let body = JSON.stringify({
-            username: username,
-            password: password,
+            "username": username,
+            "password": password,
         })
         return await this.fetchRequest('authenticate', 'POST', body);
     };
 
 }
-
