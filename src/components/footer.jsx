@@ -6,10 +6,9 @@ import { BsTwitter } from 'react-icons/bs';
 function footer() {
   return (
     <div>
-     <i><b>
+      <i><b>
        Recipe Sharing 
-     </b>
-      </i> 
+    </b></i> 
       &nbsp;
       <BsInstagram/> &nbsp;
       <GrFacebook/> &nbsp;
