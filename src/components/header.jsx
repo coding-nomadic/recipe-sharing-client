@@ -21,7 +21,6 @@ function header() {
       </div>
     </nav>
 
-
   )
 }
 
