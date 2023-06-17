@@ -6,7 +6,7 @@ export default class RCService
     {
         try
         {
-            const response = await fetch(`${baseURL}/${url}`, {
+            const response = await fetch(`${baseURL}${url}`, {
                 method: method,
                 body: body,
                 headers: {
@@ -27,7 +27,7 @@ export default class RCService
             username: username,
             password: password,
         })
-        return await this.fetchRequest('/authenticate', 'POST', body);
+        return await this.fetchRequest('authenticate', 'POST', body);
     };
 
 }
