@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 
 function header() {
 
@@ -15,9 +17,12 @@ function header() {
           <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Check</a>
 
 
-
-          <a className="navbar-brand" style={{fontFamily: "initial", marginLeft: "150px",marginRight: "-300px"}}  href="#">Sign In</a>
-
+          <Link to="hi">
+				<Button id="names" className="btn mb-3" variant="outline-dark"
+        style={{fontFamily: "initial", marginLeft: "250px",marginRight: "-300px", marginTop: "10px"}}  >
+            Sign In
+				</Button>
+			</Link>
 
       </div>
     </nav>
