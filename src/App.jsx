@@ -1,7 +1,7 @@
 import './App.scss';
 import grill from "./images/delish.jpeg";
 import React, { useEffect, useState } from "react";
-import Header from "./components/header"
+import Header from "./components/header/header"
 import Items from "./components/items"
 import Footer from "./components/footer"
 import RCServiceComponent from "./context/RCService";
