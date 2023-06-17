@@ -45,6 +45,6 @@ export default class RCService
 
     GetRecipes = async () =>
     {
-        return await this.fetchRequest('/api/v1/recipes', 'GET');
+        return await this.fetchRequest('api/v1/recipes', 'GET');
     };
 }
