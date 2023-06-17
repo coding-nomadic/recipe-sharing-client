@@ -24,12 +24,18 @@ function Header() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [SignUpOpen, setSignUpOpen] = React.useState(false);
+  const handleSignUpOpen = () => setSignUpOpen(true);
+  const handleSignUpClose = () => setSignUpOpen(false);
+
   const [userName, setUserName] = useState();
   const [password, setPassword] = useState();
-
+  const [email, setEmail] = useState();
+  const [fullName, setFullName] = useState();
+  const [mobileNumber, setMobileNumber] = useState();
   const RCService = React.useContext(RCServiceComponent);
 
-  const submitForm = async() => {
+  const signIn = async() => {
     let result;
     try
     {
@@ -40,6 +46,30 @@ function Header() {
     }
     console.log("result 111 is", result)
   }
+
+  const signUp = async() => {
+    let result2;
+    try
+    {
+      result2 = await RCService.SignUp(userName, password, email, fullName, mobileNumber)
+    } catch (e)
+    {
+      console.log('e', e)
+    }
+    console.log("result 22222 is", result2)
+  }
+
+  const toggleSignUp = () => {
+    handleSignUpOpen();
+    handleClose();
+  }
+
+
+  const toggleSignIn = () => {
+    handleSignUpClose();
+    handleOpen();
+  }
+
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -80,16 +110,85 @@ function Header() {
                 <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
               </label>
               <br/>
+              <i style={{color: "blue", fontSize: "13px", float: "right"}}
+              onClick={
+                toggleSignUp
+              }>
+                Sign Up
+              </i>
               <br/>   
+              <br/>
               <Button type="submit"
               id="names" className="btn mb-3" variant="outline-dark"
               style={{float: "right"}}
-              onClick={submitForm}>
+              onClick={signIn}>
               Submit
               </Button>
             </form>
             </Box>
           </Modal>
+
+          <Modal
+            open={SignUpOpen}
+            onClose={handleSignUpClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Sign Up
+              </Typography>
+              <br/>
+              <form>
+              <label>
+                User Name:
+              <br/>
+                <input type="text" name="username" onChange={(e) => setUserName(e.target.value)}/>
+              </label>
+              <br/>
+              <br/>   
+              <label>
+                Password:
+              <br/>
+                <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
+              </label>
+              <br/>
+              <label>
+                Email:
+              <br/>
+                <input type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
+              </label>
+              <br/>
+              <br/>   
+              <label>
+                Full Name:
+              <br/>
+                <input type="text" name="fullName"  onChange={(e) => setFullName(e.target.value)} />
+              </label>
+              <br/>
+              <label>
+                Mobile number:
+              <br/>
+                <input type="text" name="mobile"  onChange={(e) => setMobileNumber(e.target.value)} />
+              </label>
+              <br/>
+              
+              <i style={{color: "blue", fontSize: "13px", float: "right"}}
+              onClick={toggleSignIn}> 
+                Sign In
+              </i>
+              <br/>   
+              <br/>
+              <Button type="submit"
+              id="names" className="btn mb-3" variant="outline-dark"
+              style={{float: "right"}}
+              onClick={signUp}>
+              Submit
+              </Button>
+            </form>
+            </Box>
+          </Modal>
+
 			</Link>
       </div>
     </nav>
