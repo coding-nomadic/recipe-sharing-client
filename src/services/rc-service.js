@@ -15,7 +15,7 @@ export default class RCService
                 }
             }
             );
-            return response;
+            return await response.json();
         } catch (e)
         {
             console.log(e)
