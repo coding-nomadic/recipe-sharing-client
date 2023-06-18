@@ -20,7 +20,7 @@ const style = {
   borderRadius: "20px",
 };
 
-function Header() {
+function Header({setRecall}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -35,11 +35,13 @@ function Header() {
   const [mobileNumber, setMobileNumber] = useState();
   const RCService = React.useContext(RCServiceComponent);
 
-  const signIn = async() => {
+  const signIn = async(e) => {
+    e.preventDefault();
     let result;
     try
     {
-      result = await RCService.postAuthenticate(userName, password)
+      result = await RCService.postAuthenticate(userName, password);
+      setRecall(Math.floor(Math.random() * 1000000))
     } catch (e)
     {
       console.log('e', e)
@@ -47,7 +49,8 @@ function Header() {
     console.log("result 111 is", result)
   }
 
-  const signUp = async() => {
+  const signUp = async(e) => {
+    e.preventDefault();
     let result2;
     try
     {
@@ -77,7 +80,6 @@ function Header() {
           <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Items</a> 
           <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Recipe</a>
           <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Check</a>
-          <Link to="hi">
 				<Button id="names" className="btn mb-3" variant="outline-dark"
         style={{fontFamily: "initial", marginLeft: "250px",marginRight: "-300px", marginTop: "10px"}} 
         onClick={handleOpen}> 
@@ -119,7 +121,7 @@ function Header() {
               <Button type="submit"
               id="names" className="btn mb-3" variant="outline-dark"
               style={{float: "right"}}
-              onClick={signIn}>
+              onClick={(e) => signIn(e)}>
               Submit
               </Button>
             </form>
@@ -179,13 +181,12 @@ function Header() {
               <Button type="submit"
               id="names" className="btn mb-3" variant="outline-dark"
               style={{float: "right"}}
-              onClick={signUp}>
+              onClick={(e) => signUp(e)}>
               Submit
               </Button>
             </form>
             </Box>
           </Modal>
-			</Link>
       </div>
     </nav>
   )

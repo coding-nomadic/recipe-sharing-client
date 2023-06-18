@@ -10,13 +10,15 @@ function App()
 {
   const [data, setData] = useState()
   const RCService = React.useContext(RCServiceComponent);
-
+  const token = localStorage.getItem("token");
+  const [recall, setRecall] = useState()
+  
   const myFunction = async () =>
   {
     let result3;
     try
     {
-      result3 = await RCService.GetRecipes()
+      result3 = await RCService.GetRecipes(token)
     } catch (e)
     {
       console.log('e', e)
@@ -27,7 +29,7 @@ function App()
   useEffect(() =>
   {
     myFunction()
-  }, [])
+  }, [recall])
 
   return (
     <div className="App">
@@ -45,7 +47,7 @@ function App()
         style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
       />
       <div style={ { marginLeft: "%" } }>
-        <Header />
+        <Header setRecall={setRecall} />
       </div>
       <div style={ { marginLeft: "%" } }>
         <Items data={ data } />

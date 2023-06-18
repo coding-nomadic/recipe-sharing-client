@@ -2,7 +2,7 @@ const baseURL = "https://recipe-app-service.herokuapp.com/";
 
 export default class RCService
 {
-    fetchRequest = async (url, method, body,) =>
+    fetchRequest = async (token, url, method, body,) =>
     {
         try
         {
@@ -11,7 +11,8 @@ export default class RCService
                 body: body,
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    "Authorization": `Bearer ${token}`
                 }
             }
             );
@@ -43,8 +44,8 @@ export default class RCService
         return await this.fetchRequest('signup', 'POST', body);
     };
 
-    GetRecipes = async () =>
+    GetRecipes = async (token) =>
     {
-        return await this.fetchRequest('api/v1/recipes', 'GET');
+        return await this.fetchRequest(token, 'api/v1/recipes', 'GET');
     };
 }
