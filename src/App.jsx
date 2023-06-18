@@ -5,6 +5,7 @@ import Header from "./components/header/header"
 import Items from "./components/items"
 import Footer from "./components/footer"
 import RCServiceComponent from "./context/RCService";
+import { Link } from 'react-router-dom';
 
 function App()
 {
@@ -38,7 +39,9 @@ function App()
       >
         <i>
           <b>
+        <Link to={"/"} style={{color: "black", textDecoration: "none"}}>
             Recipe Sharing
+        </Link> 
           </b>
         </i>
       </h1>
