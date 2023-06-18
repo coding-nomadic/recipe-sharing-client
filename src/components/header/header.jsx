@@ -64,12 +64,10 @@ function Header() {
     handleClose();
   }
 
-
   const toggleSignIn = () => {
     handleSignUpClose();
     handleOpen();
   }
-
 
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -127,7 +125,6 @@ function Header() {
             </form>
             </Box>
           </Modal>
-
           <Modal
             open={SignUpOpen}
             onClose={handleSignUpClose}
@@ -188,7 +185,6 @@ function Header() {
             </form>
             </Box>
           </Modal>
-
 			</Link>
       </div>
     </nav>
