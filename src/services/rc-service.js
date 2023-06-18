@@ -1,4 +1,3 @@
-const baseURL = "https://recipe-app-service.herokuapp.com/";
 
 export default class RCService
 {
@@ -6,7 +5,7 @@ export default class RCService
     {
         try
         {
-            const response = await fetch(`${baseURL}${url}`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}${url}`, {
                 method: method,
                 body: body,
                 headers: {
