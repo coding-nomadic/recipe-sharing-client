@@ -110,7 +110,7 @@ function Header({setRecall}) {
                 <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
               </label>
               <br/>
-              <i style={{color: "blue", fontSize: "13px", float: "right"}}
+              <i style={{color: "blue", fontSize: "13px", float: "right",cursor: "pointer" }}
               onClick={
                 toggleSignUp
               }>
@@ -172,7 +172,7 @@ function Header({setRecall}) {
               </label>
               <br/>
               
-              <i style={{color: "blue", fontSize: "13px", float: "right"}}
+              <i style={{color: "blue", fontSize: "13px", float: "right",cursor: "pointer"}}
               onClick={toggleSignIn}> 
                 Sign In
               </i>
