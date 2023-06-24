@@ -24,7 +24,7 @@ function App()
     {
       console.log('e', e)
     }
-    console.log("result 333 3 is", result3);
+    setData(result3)
   }
 
   useEffect(() =>

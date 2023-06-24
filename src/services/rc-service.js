@@ -1,7 +1,7 @@
 
 export default class RCService
 {
-    fetchRequest = async (token, url, method, body,) =>
+    fetchRequest = async (url, method, body, token) =>
     {
         try
         {
@@ -46,6 +46,25 @@ export default class RCService
 
     GetRecipes = async (token) =>
     {
-        return await this.fetchRequest(token, 'api/v1/recipes', 'GET');
+        // return await this.fetchRequest('api/v1/recipes', 'GET', '', token);
+        try
+        {
+            // https://recipe-service-ixhm.onrender.com/api/v1/recipes
+            // const response = await fetch(`${process.env.REACT_APP_API_URL}${'api/v1/recipes'}`, {
+            const response = await fetch(`${"https://recipe-service-ixhm.onrender.com/api/v1/recipes"}`, {
+                method: "GET",
+                // body: body,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+            );
+            return await response.json();
+        } catch (e)
+        {
+            console.log(e)
+        }
     };
 }

@@ -4,10 +4,12 @@ function Item({data}) {
   return (
   <div>
     <h1>
-      {data.author}
+      {data.description}
       </h1>
   </div>
 )
 }
 
-export default Item
+export default Item;
+
+
