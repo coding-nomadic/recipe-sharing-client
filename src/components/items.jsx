@@ -11,5 +11,3 @@ function Items({data}) {
 }
 
 export default Items;
-
-
