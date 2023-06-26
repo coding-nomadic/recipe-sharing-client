@@ -9,11 +9,13 @@ function Item({data}) {
       </h1>
       <Stack gap={3} style={{border: "ridge"}}>
         {
-          data.comments?.length && data.comments.map(el => {
+          data.comments?.length ? data.comments.map(el => {
             return <div className="p-2">
               {  el.body}
             </div>
-          })
+          }) :
+          <div className="p-2">
+          </div>
         }
     </Stack>
   </div>
