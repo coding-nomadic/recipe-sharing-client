@@ -5,7 +5,6 @@ import Header from "./header/header"
 import RCServiceComponent from "../context/RCService";
 import Items from "./items"
 import Footer from "./footer"
-import Login from "./login"
 
 function Home()
 {
@@ -55,7 +54,6 @@ function Home()
             <div style={ { marginLeft: "%" } }>
                 <Items data={ data } />
             </div>
-            {/* <Login/> */ }
             <div className="footer">
                 <Footer />
             </div>
