@@ -4,12 +4,13 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import "./header.scss";
 import { useNavigate } from "react-router-dom";
 
-function Header()
+function Header({ logOut })
 {
   let navigate = useNavigate();
 
   const signOut = () =>
   {
+    logOut()
     localStorage.clear();
     navigate("/")
   }

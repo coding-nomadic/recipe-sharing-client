@@ -18,7 +18,7 @@ const style = {
   borderRadius: "20px",
 };
 
-function Login()
+function Login({ logIn })
 {
   const [SignUpOpen, setSignUpOpen] = React.useState(false);
   const handleSignUpOpen = () => setSignUpOpen(true);
@@ -40,6 +40,7 @@ function Login()
       result = await RCService.postAuthenticate(userName, password);
       if (!!result)
       {
+        logIn()
         // Set Token:
         localStorage.setItem("token", result.token);
         // Navigate to home page:

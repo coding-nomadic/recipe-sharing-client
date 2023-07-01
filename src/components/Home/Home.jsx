@@ -7,7 +7,7 @@ import Items from "../items"
 import Footer from "../footer"
 import "./Home.scss"
 
-function Home()
+function Home({ logOut })
 {
     const [data, setData] = useState()
     const RCService = React.useContext(RCServiceComponent);
@@ -49,12 +49,12 @@ function Home()
                 style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
             />
             <div>
-                <Header />
+                <Header logOut={ logOut } />
             </div>
             <div>
                 <Items data={ data } />
-            </div> 
-            <br/>
+            </div>
+            <br />
             <div className="footer">
                 <Footer />
             </div>
