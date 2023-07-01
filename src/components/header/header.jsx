@@ -2,9 +2,17 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import "./header.scss";
+import { useNavigate } from "react-router-dom";
 
 function Header({ setRecall })
 {
+  let navigate = useNavigate();
+
+  const signOut = () =>
+  {
+    localStorage.clear();
+    navigate("/")
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,8 +24,8 @@ function Header({ setRecall })
         <a className="navbar-brand" style={ { fontFamily: "initial" } } href="#">Check</a>
         <Button id="names" className="btn mb-3" variant="outline-dark"
           style={ { fontFamily: "initial", marginLeft: "250px", marginRight: "-300px", marginTop: "10px" } }
-          // onClick={ handleOpen }
-          >
+          onClick={ signOut }
+        >
           Sign Out
         </Button>
 

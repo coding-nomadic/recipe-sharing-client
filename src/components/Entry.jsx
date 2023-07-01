@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-// import "./header.scss";
 import RCServiceComponent from "../context/RCService";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: 'absolute',
@@ -32,7 +30,7 @@ function Login()
   const [fullName, setFullName] = useState();
   const [mobileNumber, setMobileNumber] = useState();
   const RCService = React.useContext(RCServiceComponent);
-  let navigate = useNavigate ();
+  let navigate = useNavigate();
 
   const signIn = async (e) =>
   {
@@ -42,7 +40,8 @@ function Login()
     {
       result = await RCService.postAuthenticate(userName, password);
       //   setRecall(Math.floor(Math.random() * 1000000))
-      if (!!result) {
+      if (!!result)
+      {
         navigate("/home")
       }
       return null;
