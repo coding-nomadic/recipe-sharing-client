@@ -39,9 +39,11 @@ function Login()
     try
     {
       result = await RCService.postAuthenticate(userName, password);
-      //   setRecall(Math.floor(Math.random() * 1000000))
       if (!!result)
       {
+        // Set Token:
+        localStorage.setItem("token", result.token);
+        // Navigate to home page:
         navigate("/home")
       }
       return null;
