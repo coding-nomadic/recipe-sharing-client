@@ -9,7 +9,6 @@ import "./Home.scss"
 
 function Home()
 {
-    const [recall, setRecall] = useState();
     const [data, setData] = useState()
     const RCService = React.useContext(RCServiceComponent);
     const token = localStorage.getItem("token");
@@ -30,7 +29,7 @@ function Home()
     useEffect(() =>
     {
         myFunction()
-    }, [recall])
+    }, [])
 
     return (
         <div>
@@ -49,8 +48,8 @@ function Home()
                 className="images"
                 style={ { width: "100%", position: "relative", height: '600px', objectFit: "cover" } }
             />
-            <div style={ { marginLeft: "%" } }>
-                <Header setRecall={ setRecall } />
+            <div>
+                <Header />
             </div>
             <div>
                 <Items data={ data } />

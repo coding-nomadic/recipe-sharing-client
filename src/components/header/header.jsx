@@ -4,7 +4,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import "./header.scss";
 import { useNavigate } from "react-router-dom";
 
-function Header({ setRecall })
+function Header()
 {
   let navigate = useNavigate();
 
