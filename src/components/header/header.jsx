@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Box from '@mui/material/Box';
@@ -20,7 +20,8 @@ const style = {
   borderRadius: "20px",
 };
 
-function Header({setRecall}) {
+function Header({ setRecall })
+{
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -35,7 +36,8 @@ function Header({setRecall}) {
   const [mobileNumber, setMobileNumber] = useState();
   const RCService = React.useContext(RCServiceComponent);
 
-  const signIn = async(e) => {
+  const signIn = async (e) =>
+  {
     e.preventDefault();
     let result;
     try
@@ -49,7 +51,8 @@ function Header({setRecall}) {
     console.log("result 111 is", result)
   }
 
-  const signUp = async(e) => {
+  const signUp = async (e) =>
+  {
     e.preventDefault();
     let result2;
     try
@@ -62,131 +65,133 @@ function Header({setRecall}) {
     console.log("result 22222 is", result2)
   }
 
-  const toggleSignUp = () => {
+  const toggleSignUp = () =>
+  {
     handleSignUpOpen();
     handleClose();
   }
 
-  const toggleSignIn = () => {
+  const toggleSignIn = () =>
+  {
     handleSignUpClose();
     handleOpen();
   }
 
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div style={{marginLeft: "40vw" }}>
-        <a className="navbar-brand" style={{fontFamily: "initial", marginRight: "150px",marginLeft: "-300px"}} href="#">Recipe Sharing</a>
-          <a className="navbar-brand" style={{fontFamily: "initial"}} href="#">Category</a>
-          <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Items</a> 
-          <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Recipe</a>
-          <a className="navbar-brand" style={{fontFamily: "initial"}}  href="#">Check</a>
-				<Button id="names" className="btn mb-3" variant="outline-dark"
-        style={{fontFamily: "initial", marginLeft: "250px",marginRight: "-300px", marginTop: "10px"}} 
-        onClick={handleOpen}> 
-            Sign In
-				</Button>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Sign In
-              </Typography>
-              <br/>
-              <form>
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div style={ { marginLeft: "40vw" } }>
+        <a className="navbar-brand" style={ { fontFamily: "initial", marginRight: "150px", marginLeft: "-300px" } } href="#">Recipe Sharing</a>
+        <a className="navbar-brand" style={ { fontFamily: "initial" } } href="#">Category</a>
+        <a className="navbar-brand" style={ { fontFamily: "initial" } } href="#">Items</a>
+        <a className="navbar-brand" style={ { fontFamily: "initial" } } href="#">Recipe</a>
+        <a className="navbar-brand" style={ { fontFamily: "initial" } } href="#">Check</a>
+        <Button id="names" className="btn mb-3" variant="outline-dark"
+          style={ { fontFamily: "initial", marginLeft: "250px", marginRight: "-300px", marginTop: "10px" } }
+          onClick={ handleOpen }>
+          Sign In
+        </Button>
+        <Modal
+          open={ open }
+          onClose={ handleClose }
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={ style }>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Sign In
+            </Typography>
+            <br />
+            <form>
               <label>
                 User Name:
-              <br/>
-                <input type="text" name="username" onChange={(e) => setUserName(e.target.value)}/>
+                <br />
+                <input type="text" name="username" onChange={ (e) => setUserName(e.target.value) } />
               </label>
-              <br/>
-              <br/>   
+              <br />
+              <br />
               <label>
                 Password:
-              <br/>
-                <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
+                <br />
+                <input type="text" name="password" onChange={ (e) => setPassword(e.target.value) } />
               </label>
-              <br/>
-              <i style={{color: "blue", fontSize: "13px", float: "right",cursor: "pointer" }}
-              onClick={
-                toggleSignUp
-              }>
+              <br />
+              <i style={ { color: "blue", fontSize: "13px", float: "right", cursor: "pointer" } }
+                onClick={
+                  toggleSignUp
+                }>
                 Sign Up
               </i>
-              <br/>   
-              <br/>
+              <br />
+              <br />
               <Button type="submit"
-              id="names" className="btn mb-3" variant="outline-dark"
-              style={{float: "right"}}
-              onClick={(e) => signIn(e)}>
-              Submit
+                id="names" className="btn mb-3" variant="outline-dark"
+                style={ { float: "right" } }
+                onClick={ (e) => signIn(e) }>
+                Submit
               </Button>
             </form>
-            </Box>
-          </Modal>
-          <Modal
-            open={SignUpOpen}
-            onClose={handleSignUpClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Sign Up
-              </Typography>
-              <br/>
-              <form>
+          </Box>
+        </Modal>
+        <Modal
+          open={ SignUpOpen }
+          onClose={ handleSignUpClose }
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={ style }>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Sign Up
+            </Typography>
+            <br />
+            <form>
               <label>
                 User Name:
-              <br/>
-                <input type="text" name="username" onChange={(e) => setUserName(e.target.value)}/>
+                <br />
+                <input type="text" name="username" onChange={ (e) => setUserName(e.target.value) } />
               </label>
-              <br/>
-              <br/>   
+              <br />
+              <br />
               <label>
                 Password:
-              <br/>
-                <input type="text" name="password"  onChange={(e) => setPassword(e.target.value)} />
+                <br />
+                <input type="text" name="password" onChange={ (e) => setPassword(e.target.value) } />
               </label>
-              <br/>
+              <br />
               <label>
                 Email:
-              <br/>
-                <input type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
+                <br />
+                <input type="text" name="email" onChange={ (e) => setEmail(e.target.value) } />
               </label>
-              <br/>
-              <br/>   
+              <br />
+              <br />
               <label>
                 Full Name:
-              <br/>
-                <input type="text" name="fullName"  onChange={(e) => setFullName(e.target.value)} />
+                <br />
+                <input type="text" name="fullName" onChange={ (e) => setFullName(e.target.value) } />
               </label>
-              <br/>
+              <br />
               <label>
                 Mobile number:
-              <br/>
-                <input type="text" name="mobile"  onChange={(e) => setMobileNumber(e.target.value)} />
+                <br />
+                <input type="text" name="mobile" onChange={ (e) => setMobileNumber(e.target.value) } />
               </label>
-              <br/>
-              
-              <i style={{color: "blue", fontSize: "13px", float: "right",cursor: "pointer"}}
-              onClick={toggleSignIn}> 
+              <br />
+
+              <i style={ { color: "blue", fontSize: "13px", float: "right", cursor: "pointer" } }
+                onClick={ toggleSignIn }>
                 Sign In
               </i>
-              <br/>   
-              <br/>
+              <br />
+              <br />
               <Button type="submit"
-              id="names" className="btn mb-3" variant="outline-dark"
-              style={{float: "right"}}
-              onClick={(e) => signUp(e)}>
-              Submit
+                id="names" className="btn mb-3" variant="outline-dark"
+                style={ { float: "right" } }
+                onClick={ (e) => signUp(e) }>
+                Submit
               </Button>
             </form>
-            </Box>
-          </Modal>
+          </Box>
+        </Modal>
       </div>
     </nav>
   )
