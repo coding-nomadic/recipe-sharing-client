@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import React, { useEffect, useState, Fragment } from "react";
-import grill from "../images/delish.jpeg";
-import Header from "./header/header"
-import RCServiceComponent from "../context/RCService";
-import Items from "./items"
-import Footer from "./footer"
+import grill from "../../images/delish.jpeg";
+import Header from "../header/header"
+import RCServiceComponent from "../../context/RCService";
+import Items from "../items"
+import Footer from "../footer"
+import "./Home.scss"
 
 function Home()
 {
@@ -51,9 +52,10 @@ function Home()
             <div style={ { marginLeft: "%" } }>
                 <Header setRecall={ setRecall } />
             </div>
-            <div style={ { marginLeft: "%" } }>
+            <div>
                 <Items data={ data } />
-            </div>
+            </div> 
+            <br/>
             <div className="footer">
                 <Footer />
             </div>

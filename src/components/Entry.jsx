@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 import RCServiceComponent from "../context/RCService";
 import { useNavigate } from "react-router-dom";
 
@@ -47,12 +46,10 @@ function Login()
         navigate("/home")
       }
       return null;
-
     } catch (e)
     {
       console.log('e', e)
     }
-    console.log("result 111 is", result)
   }
 
   const signUp = async (e) =>
@@ -66,7 +63,6 @@ function Login()
     {
       console.log('e', e)
     }
-    console.log("result 22222 is", result2)
   }
 
   const toggleSignUp = () =>
