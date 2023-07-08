@@ -34,25 +34,25 @@ function App()
         </Route>
         <Route path="/dinners" element={
           <Protected isLoggedIn={ isLoggedIn }>
-            <Dinners logOut={ logOut } />
+            <Dinners />
           </Protected>
         } >
         </Route>
         <Route path="/foodnews" element={
           <Protected isLoggedIn={ isLoggedIn }>
-            <FoodNews logOut={ logOut } />
+            <FoodNews />
           </Protected>
         } >
         </Route>
         <Route path="/recipes" element={
           <Protected isLoggedIn={ isLoggedIn }>
-            <Recipes logOut={ logOut } />
+            <Recipes />
           </Protected>
         } >
         </Route>
         <Route path="/tips" element={
           <Protected isLoggedIn={ isLoggedIn }>
-            <Tips logOut={ logOut } />
+            <Tips />
           </Protected>
         } >
         </Route>
