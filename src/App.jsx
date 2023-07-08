@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Login from './components/Entry';
+import Dinners from './components/Dinners';
+import FoodNews from './components/FoodNews';
+import Recipes from './components/Recipes';
+import Tips from './components/Tips';
 import Protected from "./components/Protected";
 
 function App()
@@ -25,6 +29,30 @@ function App()
         <Route path="/home" element={
           <Protected isLoggedIn={ isLoggedIn }>
             <Home logOut={ logOut } />
+          </Protected>
+        } >
+        </Route>
+        <Route path="/dinners" element={
+          <Protected isLoggedIn={ isLoggedIn }>
+            <Dinners logOut={ logOut } />
+          </Protected>
+        } >
+        </Route>
+        <Route path="/foodnews" element={
+          <Protected isLoggedIn={ isLoggedIn }>
+            <FoodNews logOut={ logOut } />
+          </Protected>
+        } >
+        </Route>
+        <Route path="/recipes" element={
+          <Protected isLoggedIn={ isLoggedIn }>
+            <Recipes logOut={ logOut } />
+          </Protected>
+        } >
+        </Route>
+        <Route path="/tips" element={
+          <Protected isLoggedIn={ isLoggedIn }>
+            <Tips logOut={ logOut } />
           </Protected>
         } >
         </Route>
