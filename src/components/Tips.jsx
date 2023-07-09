@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from "./header/header"
 
-function Tips()
+function Tips({ logOut })
 {
     return (
-        <div>Tips</div>
+        <div>
+            <Header logOut={ logOut } />
+            <br />
+            Tips
+        </div>
     )
 }
 

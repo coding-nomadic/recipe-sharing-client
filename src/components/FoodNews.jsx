@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from "./header/header"
 
-function FoodNews()
+function FoodNews({ logOut })
 {
     return (
-        <div>FoodNews</div>
+        <div>
+            <Header logOut={ logOut } />
+            <br />
+            FoodNews
+        </div>
     )
 }
 
